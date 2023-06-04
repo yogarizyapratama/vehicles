@@ -1,6 +1,10 @@
 # Vehicles API
 ### Backend testing
 
+### Teknologi yang Digunakan
+1. Node js
+2. MySQL
+
 ### Cara Instalasi
 1. Install node js jika belum menginstal di komputer anda.
 2. Clone Repository
