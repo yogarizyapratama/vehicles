@@ -1,0 +1,1318 @@
+{
+	"info": {
+		"_postman_id": "dc5abfbf-94da-47fc-a63d-05597db78645",
+		"name": "VEHICLES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21857409"
+	},
+	"item": [
+		{
+			"name": "USERS",
+			"item": [
+				{
+					"name": "REGISTER NEW ACCOUNT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"seco\",\r\n    \"email\" : \"seco01@gmail.com\",\r\n    \"is_admin\" : false,\r\n    \"password\" : \"seco1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"seco@gmail.com\",\r\n    \"password\" : \"seco1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL USERS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USERS USING QUERY PARAMETER TO CHANGE DEFAULT LIMIT AND SKIP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/users?limit=20&skip=0",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "skip",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE DATA USER",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"yoga rizya pratama\",\r\n    \"email\" : \"seco@gmail.com\",\r\n    \"is_admin\" : true,\r\n    \"password\" : \"seco1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/49522864-7962-4ba6-8253-18fad1dda9fe",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"49522864-7962-4ba6-8253-18fad1dda9fe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER BY ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/3eeabebf-6db0-4bcd-8353-a73e10e6d835",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"3eeabebf-6db0-4bcd-8353-a73e10e6d835"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VEHICLE",
+			"item": [
+				{
+					"name": "BRANDS",
+					"item": [
+						{
+							"name": "CREATE NEW VEHICLE BRANDS",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNDk1MjI4NjQtNzk2Mi00YmE2LTgyNTMtMThmYWQxZGRhOWZlIiwiaWF0IjoxNjg1ODg2MzI2LCJleHAiOjE2ODU4ODk5MjZ9.w1N_5GqvY5IV3dpzPaZe_z34JMidSO9jbhORzjWmLaY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"wuling\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-brands",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-brands"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL BRANDS DATA ",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-brands",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-brands"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BRANDS DATA USING QUERY PARAMETER TO CHANGE DEFAULT LIMIT AND SKIP",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-brands?limit=10&skip=0",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-brands"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BRANDS DATA USING FILTER BY BRAND NAME",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-brands?brand_name=toyota",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-brands"
+									],
+									"query": [
+										{
+											"key": "brand_name",
+											"value": "toyota"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BRANDS DATA BY ID ",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-brands/0d4cad07-8e1d-48a9-8bb6-599d622c1fda",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-brands",
+										"0d4cad07-8e1d-48a9-8bb6-599d622c1fda"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE VEHICLE BRANDS",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNDk1MjI4NjQtNzk2Mi00YmE2LTgyNTMtMThmYWQxZGRhOWZlIiwiaWF0IjoxNjg1ODg2MzI2LCJleHAiOjE2ODU4ODk5MjZ9.w1N_5GqvY5IV3dpzPaZe_z34JMidSO9jbhORzjWmLaY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"hyundai\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-brands/d47c23e8-c8f6-4105-829a-52e1b4448bcb",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-brands",
+										"d47c23e8-c8f6-4105-829a-52e1b4448bcb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE VEHICLE BRANDS",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNDk1MjI4NjQtNzk2Mi00YmE2LTgyNTMtMThmYWQxZGRhOWZlIiwiaWF0IjoxNjg1ODg2MzI2LCJleHAiOjE2ODU4ODk5MjZ9.w1N_5GqvY5IV3dpzPaZe_z34JMidSO9jbhORzjWmLaY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-brands/d47c23e8-c8f6-4105-829a-52e1b4448bcb",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-brands",
+										"d47c23e8-c8f6-4105-829a-52e1b4448bcb"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "TYPES",
+					"item": [
+						{
+							"name": "CREATE NEW VEHICLE TYPE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNDk1MjI4NjQtNzk2Mi00YmE2LTgyNTMtMThmYWQxZGRhOWZlIiwiaWF0IjoxNjg1ODg2MzI2LCJleHAiOjE2ODU4ODk5MjZ9.w1N_5GqvY5IV3dpzPaZe_z34JMidSO9jbhORzjWmLaY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"suv\",\r\n    \"brand_id\" : \"e8c26f5a-83de-45de-bb24-b198284d3172\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-types",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL VEHICLE TYPES",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-types",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET VEHICLE TYPES USING QUERY PARAMETER TO CHANGE DEFAULT LIMIT AND SKIP",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-types?limit=10&skip=0",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-types"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET VEHICLE TYPES USING FILTER BY BRAND ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-types?brand_id=0d4cad07-8e1d-48a9-8bb6-599d622c1fda",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-types"
+									],
+									"query": [
+										{
+											"key": "brand_id",
+											"value": "0d4cad07-8e1d-48a9-8bb6-599d622c1fda"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET VEHICLE TYPE BY ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-types/629fb984-aca8-4e06-9d7d-5b7030f06716",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-types",
+										"629fb984-aca8-4e06-9d7d-5b7030f06716"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE VEHICLE TYPE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNDk1MjI4NjQtNzk2Mi00YmE2LTgyNTMtMThmYWQxZGRhOWZlIiwiaWF0IjoxNjg1ODg2MzI2LCJleHAiOjE2ODU4ODk5MjZ9.w1N_5GqvY5IV3dpzPaZe_z34JMidSO9jbhORzjWmLaY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"family car\",\r\n    \"brand_id\" : \"e8c26f5a-83de-45de-bb24-b198284d3172\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-types/6570d647-c02c-4e7c-b415-820f1e0bb4a7",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-types",
+										"6570d647-c02c-4e7c-b415-820f1e0bb4a7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE VEHICLE TYPE",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"sedan\",\r\n    \"brand_id\" : \"0d4cad07-8e1d-48a9-8bb6-599d622c1fda\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-types/07456284-2d26-4be1-8d4c-0d7eb73c4635",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-types",
+										"07456284-2d26-4be1-8d4c-0d7eb73c4635"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "MODELS",
+					"item": [
+						{
+							"name": "CREATE NEW MODEL",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNDk1MjI4NjQtNzk2Mi00YmE2LTgyNTMtMThmYWQxZGRhOWZlIiwiaWF0IjoxNjg1ODg2MzI2LCJleHAiOjE2ODU4ODk5MjZ9.w1N_5GqvY5IV3dpzPaZe_z34JMidSO9jbhORzjWmLaY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"almaz\",\r\n    \"type_id\" : \"6570d647-c02c-4e7c-b415-820f1e0bb4a7\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-models",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-models"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL MODELS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-models",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-models"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET MODELS USING QUERY PARAMETER TO CHANGE DEFAULT LIMIT AND SKIP",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-models?limit=10&skip=0",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-models"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET MODELS USING FILTER BY MODELS NAME",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-models?model_name=vios",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-models"
+									],
+									"query": [
+										{
+											"key": "model_name",
+											"value": "vios"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET MODEL BY ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-models/a5f32b15-ab88-4cbd-9677-7106703653b3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-models",
+										"a5f32b15-ab88-4cbd-9677-7106703653b3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE MODEL",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNDk1MjI4NjQtNzk2Mi00YmE2LTgyNTMtMThmYWQxZGRhOWZlIiwiaWF0IjoxNjg1ODg2MzI2LCJleHAiOjE2ODU4ODk5MjZ9.w1N_5GqvY5IV3dpzPaZe_z34JMidSO9jbhORzjWmLaY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"almaz 2\",\r\n    \"type_id\" : \"6570d647-c02c-4e7c-b415-820f1e0bb4a7\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-models/8661a21f-e964-424c-b0b4-85beb1be4223",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-models",
+										"8661a21f-e964-424c-b0b4-85beb1be4223"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE MODELS",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNDk1MjI4NjQtNzk2Mi00YmE2LTgyNTMtMThmYWQxZGRhOWZlIiwiaWF0IjoxNjg1ODg2MzI2LCJleHAiOjE2ODU4ODk5MjZ9.w1N_5GqvY5IV3dpzPaZe_z34JMidSO9jbhORzjWmLaY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-models/8661a21f-e964-424c-b0b4-85beb1be4223",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-models",
+										"8661a21f-e964-424c-b0b4-85beb1be4223"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "YEARS",
+					"item": [
+						{
+							"name": "CREATE NEW VEHICLE YEAR",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNDk1MjI4NjQtNzk2Mi00YmE2LTgyNTMtMThmYWQxZGRhOWZlIiwiaWF0IjoxNjg1ODg2MzI2LCJleHAiOjE2ODU4ODk5MjZ9.w1N_5GqvY5IV3dpzPaZe_z34JMidSO9jbhORzjWmLaY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"year\" : \"2023\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-years",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-years"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL YEARS",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"year\" : \"2023\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-years",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-years"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET YEAR BY ID ",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"year\" : \"2023\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-years/0ea5b2ee-031d-4209-ab80-6fe60bd4933c",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-years",
+										"0ea5b2ee-031d-4209-ab80-6fe60bd4933c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE YEAR",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNDk1MjI4NjQtNzk2Mi00YmE2LTgyNTMtMThmYWQxZGRhOWZlIiwiaWF0IjoxNjg1ODg2MzI2LCJleHAiOjE2ODU4ODk5MjZ9.w1N_5GqvY5IV3dpzPaZe_z34JMidSO9jbhORzjWmLaY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"year\" : \"2023\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-years/0ea5b2ee-031d-4209-ab80-6fe60bd4933c",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-years",
+										"0ea5b2ee-031d-4209-ab80-6fe60bd4933c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PRICELISTS",
+					"item": [
+						{
+							"name": "CREATE NEW PRICELIST",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNDk1MjI4NjQtNzk2Mi00YmE2LTgyNTMtMThmYWQxZGRhOWZlIiwiaWF0IjoxNjg1ODg2MzI2LCJleHAiOjE2ODU4ODk5MjZ9.w1N_5GqvY5IV3dpzPaZe_z34JMidSO9jbhORzjWmLaY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"price\" : \"600000000\",\r\n    \"year_id\" : \"58a19eb8-2543-4976-8e2f-b81236990c6d\",\r\n    \"model_id\" : \"658eda07-e8cd-45c4-b96b-b3979097f117\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-pricelists",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-pricelists"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL PRICELIST",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"price\" : \"500000000\",\r\n    \"year_id\" : \"58a19eb8-2543-4976-8e2f-b81236990c6d\",\r\n    \"model_id\" : \"658eda07-e8cd-45c4-b96b-b3979097f117\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-pricelists",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-pricelists"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL PRICELIST USING QUERY PARAMETER TO CHANGE DEFAULT LIMIT AND SKIP",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"price\" : \"500000000\",\r\n    \"year_id\" : \"58a19eb8-2543-4976-8e2f-b81236990c6d\",\r\n    \"model_id\" : \"658eda07-e8cd-45c4-b96b-b3979097f117\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-pricelists?limit=10&skip=0",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-pricelists"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL PRICELIST USING FILTER BY MODEL ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"price\" : \"500000000\",\r\n    \"year_id\" : \"58a19eb8-2543-4976-8e2f-b81236990c6d\",\r\n    \"model_id\" : \"658eda07-e8cd-45c4-b96b-b3979097f117\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-pricelists?model_id=658eda07-e8cd-45c4-b96b-b3979097f117",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-pricelists"
+									],
+									"query": [
+										{
+											"key": "model_id",
+											"value": "658eda07-e8cd-45c4-b96b-b3979097f117"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET PRICELIST BY ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"price\" : \"500000000\",\r\n    \"year_id\" : \"58a19eb8-2543-4976-8e2f-b81236990c6d\",\r\n    \"model_id\" : \"658eda07-e8cd-45c4-b96b-b3979097f117\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-pricelists/eadb0a9d-f3f0-4ee6-934f-8f4e90fd799c",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-pricelists",
+										"eadb0a9d-f3f0-4ee6-934f-8f4e90fd799c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE PRICELIST",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"price\" : \"700000000\",\r\n    \"year_id\" : \"58a19eb8-2543-4976-8e2f-b81236990c6d\",\r\n    \"model_id\" : \"658eda07-e8cd-45c4-b96b-b3979097f117\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-pricelists/ea4f32bc-6e52-4baa-9ae8-cb02deb6e785",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-pricelists",
+										"ea4f32bc-6e52-4baa-9ae8-cb02deb6e785"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE PRICELIST",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNDk1MjI4NjQtNzk2Mi00YmE2LTgyNTMtMThmYWQxZGRhOWZlIiwiaWF0IjoxNjg1ODg2MzI2LCJleHAiOjE2ODU4ODk5MjZ9.w1N_5GqvY5IV3dpzPaZe_z34JMidSO9jbhORzjWmLaY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"price\" : \"700000000\",\r\n    \"year_id\" : \"58a19eb8-2543-4976-8e2f-b81236990c6d\",\r\n    \"model_id\" : \"658eda07-e8cd-45c4-b96b-b3979097f117\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/vehicle-pricelists/ea4f32bc-6e52-4baa-9ae8-cb02deb6e785",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vehicle-pricelists",
+										"ea4f32bc-6e52-4baa-9ae8-cb02deb6e785"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
