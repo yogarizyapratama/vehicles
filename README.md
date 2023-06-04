@@ -15,6 +15,8 @@
 7. jalankan perintah npm start untuk menjalankan server (server akan berjalan pada port 8000)
 8. import postman collections yang terdapat di dalam folder vehicle
 
+API SIAP DIGUNAKAN...
+
 ### Link Dokumentasi Api Postman
 [ https://documenter.getpostman.com/view/21857409/2s93sW9bad](https://documenter.getpostman.com/view/21857409/2s93sW9bad)
 
